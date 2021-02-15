@@ -7,7 +7,12 @@ class UsersController < ApplicationController
         else
             render json: { user: session }, status: 200
         end
-    end 
+    end
+
+    def index
+        @users = User.all 
+        render json: @users
+    end  
 
     private
 
